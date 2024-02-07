@@ -14,18 +14,28 @@ export default {
 		}
 	},
 	mounted() {
-		this.doThings();
+		this.getApiEvents();
 
-		// axios.get("indirizzo").then(risultato => {
-		// 	console.log(risultato);
-		// }).catch(errore => {
-		// 	console.error(errore);
-		// });
 	},
+
 	methods: {
-		doThings() {
-			console.log("App.vue does things");
+		getApiEvents() {
+
+			let url = this.store.apiUrl + this.store.apiEvents;
+
+			axios.get(url).then(risultato => {
+				if (risultato.status === 200 && risultato.data.success) {
+					console.log(risultato.data.results);
+					this.store.allEvents = risultato.data.results;
+				} else {
+
+					console.error("oops, something went wrong");
+				}
+			}).catch(errore => {
+				console.error(errore);
+			});
 		}
+
 	}
 }
 </script>
