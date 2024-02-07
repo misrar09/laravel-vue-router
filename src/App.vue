@@ -15,7 +15,6 @@ export default {
 	},
 	mounted() {
 		this.getApiEvents();
-
 	},
 
 	methods: {
@@ -43,6 +42,7 @@ export default {
 <template>
 	<main>
 		<AppComponent />
+
 
 		<button class="btn btn-primary">
 			<font-awesome-icon icon="fa-solid fa-home" class="me-1" />

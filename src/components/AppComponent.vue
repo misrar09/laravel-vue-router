@@ -23,7 +23,23 @@ export default {
 
 <template>
     <div>
-        <h1>Sono un componente!</h1>
+        <h1>All Events</h1>
+    </div>
+
+
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center mb-2">
+            <div v-for="event in store.allEvents" class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-header"><strong>{{ event.name }}</strong></div>
+                    <div class="card-body">
+                        <strong>Organizer:</strong> {{ event.organizer }} <br>
+                        <strong>Date:</strong> {{ event.date }} <br>
+                        <strong>Capacity:</strong> {{ event.capacity }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
