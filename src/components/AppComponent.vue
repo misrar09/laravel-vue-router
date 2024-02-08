@@ -32,6 +32,7 @@ export default {
             <div v-for="event in store.allEvents" class="col-md-3 mb-4">
                 <div class="card h-100">
                     <div class="card-header"><strong>{{ event.name }}</strong></div>
+                    <span>{{ event.user?.name }}</span>
                     <div class="card-body">
                         <strong>Organizer:</strong> {{ event.organizer }} <br>
                         <strong>Date:</strong> {{ event.date }} <br>
