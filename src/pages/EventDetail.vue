@@ -50,7 +50,7 @@ export default {
                     <div class="card-body">
                         <h5 class="card-title">{{ event?.name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            {{ event?.user ? event?.user.name : "Utente sconosciuto" }}
+                            <span><em>{{ event.user ? event.user.name : "Unknown User" }}</em></span>
                         </h6>
                         <p class="card-text"><b>{{ event?.capacity }}</b>
                         </p>
