@@ -4,6 +4,8 @@ import register from "../debug" //per debuggare il componente da console
 
 export default {
     name: "AppComponent",
+
+
     data() {
         return {
             store
@@ -39,6 +41,13 @@ export default {
                     </div>
                     <div class="card-footer">
                         <span><em>{{ event.user ? event.user.name : "Unknown User" }}</em></span>
+                        <div>
+
+                            <router-link :to="{ name: 'event-detail', params: { id: event.id } }" class="btn btn-primary">
+                                <font-awesome-icon icon="fa-solid fa-circle-info" class="me-2" />
+                                <span>Dettagli</span>
+                            </router-link>
+                        </div>
 
                     </div>
                 </div>

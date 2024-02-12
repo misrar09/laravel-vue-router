@@ -17,7 +17,8 @@ export default {
 				{
 					routeName: 'about',
 					label: 'About Us'
-				}
+				},
+
 
 			]
 		}
@@ -33,7 +34,7 @@ export default {
 
 			axios.get(url).then(risultato => {
 				if (risultato.status === 200 && risultato.data.success) {
-					console.log(risultato.data.results);
+					/* console.log(risultato.data.results); */
 					this.store.allEvents = risultato.data.results;
 				} else {
 
