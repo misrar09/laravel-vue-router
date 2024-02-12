@@ -37,7 +37,16 @@ export default {
                     <div class="card-body">
                         <strong>Organizer:</strong> {{ event.organizer }} <br>
                         <strong>Date:</strong> {{ event.date }} <br>
-                        <strong>Capacity:</strong> {{ event.capacity }}
+                        <strong>Capacity:</strong> {{ event.capacity }} <br>
+                        <strong>Tags:</strong>
+                        <div v-if="event.tags && event.tags.length > 0">
+                            <ul>
+                                <li v-for="tag in event.tags" :key="tag.id">
+                                    {{ tag.name }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div v-else><span>No tag found</span></div>
                     </div>
                     <div class="card-footer">
                         <span><em>{{ event.user ? event.user.name : "Unknown User" }}</em></span>
