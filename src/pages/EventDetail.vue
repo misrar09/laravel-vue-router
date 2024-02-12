@@ -5,6 +5,8 @@ import axios from 'axios';
 export default {
     name: "EventDetail",
     props: ["id"],
+
+
     data() {
         return {
             store,
@@ -27,6 +29,7 @@ export default {
                     }
                 }).catch(error => {
                     console.error(error);
+                    this.$router.push({ name: 'home' }) //if event does not exist then push user to home page
                 });
             }
         }
