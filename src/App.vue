@@ -18,6 +18,11 @@ export default {
 					routeName: 'about',
 					label: 'About Us'
 				},
+				{
+					routeName: 'tags',
+					label: 'All Tags'
+				},
+
 
 
 			]

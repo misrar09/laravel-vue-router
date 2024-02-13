@@ -14,24 +14,21 @@ export default {
         };
     },
     methods: {
-        showEventDetail() {
-            if (this.id !== undefined) {
-                let url = `${this.store.apiUrl}${this.store.apiEvents}/${this.id}`;
+        getApiEvents() {
 
-                axios.get(url).then(response => {
-                    console.log("API Response:", response);
+            let url = this.store.apiUrl + this.store.apiEvents;
 
-                    if (response.status === 200 && response.data.success) {
-                        console.log("Results:", response.data.results);
-                        this.event = response.data.results;
-                    } else {
-                        console.error("Oops, something went wrong");
-                    }
-                }).catch(error => {
-                    console.error(error);
-                    this.$router.push({ name: 'home' }) //if event does not exist then push user to home page
-                });
-            }
+            axios.get(url).then(risultato => {
+                if (risultato.status === 200 && risultato.data.success) {
+                    console.log(risultato.data.results);
+                    this.store.allEvents = risultato.data.results;
+                } else {
+
+                    console.error("oops, something went wrong");
+                }
+            }).catch(errore => {
+                console.error(errore);
+            });
         }
     },
 

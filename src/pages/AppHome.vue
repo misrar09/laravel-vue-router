@@ -1,5 +1,5 @@
 <script>
-import AppComponent from "../components/AppComponent.vue"
+import AppComponent from "../components/AppComponent.vue";
 
 export default {
     name: "HomePage",
