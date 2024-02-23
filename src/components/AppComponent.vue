@@ -25,7 +25,7 @@ export default {
 
 <template>
     <div>
-        <h1>All Events</h1>
+        <h1>All Events are here</h1>
     </div>
 
 
